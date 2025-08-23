@@ -11,9 +11,15 @@ extends Control
 ## The current value of stardust
 var stardust : int = 0
 
+## User Interface references
+@export var user_interface : UserInterface
+@export var view : UserInterface.Views
+
 ## Initialise the label at launch
 func _ready() -> void:
 	update_label_text();
+	visible = true
+	user_interface.navigation_requested.connect(_on_navigation_requested)
 	
 ## Create 1 stardust
 func create_stardust() -> void:
@@ -36,3 +42,11 @@ func _on_button_pressed() -> void:
 func _on_timer_timeout() -> void:
 	create_stardust()
 	update_label_text()
+
+## Navigate to this page if it was requested
+func _on_navigation_requested(requested_view : UserInterface.Views) -> void:
+	if requested_view == view:
+		visible = true
+		return
+		
+	visible = false
