@@ -1,0 +1,38 @@
+class_name PrototypeGenerator
+extends Control
+## A generator prototype for creating stardust
+
+## References to the label displaying the current amount of stardust
+@export var label : Label
+## References to the button that starts automatic generation of stardust
+@export var button : Button
+## The timer that automatically generates stardust on a schedule
+@export var timer : Timer
+## The current value of stardust
+var stardust : int = 0
+
+## Initialise the label at launch
+func _ready() -> void:
+	update_label_text();
+	
+## Create 1 stardust
+func create_stardust() -> void:
+	stardust += 1
+	
+## Update the label text to reflect current stardust amount
+func update_label_text() -> void:
+	label.text = "Stardust: %s" %stardust
+
+## Trigger the timer to start auto-generating stardust, also make sure the button can't be clicked again
+func begin_generating_stardust() -> void:
+	timer.start()
+	button.disabled = true
+
+## Begin generating stardust automatically
+func _on_button_pressed() -> void:
+	begin_generating_stardust()
+
+## Create stardust + update label text
+func _on_timer_timeout() -> void:
+	create_stardust()
+	update_label_text()
