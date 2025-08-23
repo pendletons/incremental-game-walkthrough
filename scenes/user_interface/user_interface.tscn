@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d171wpbih3171"]
+[gd_scene load_steps=5 format=3 uid="uid://d171wpbih3171"]
 
 [ext_resource type="Script" uid="uid://cyjs33inyuoic" path="res://scenes/user_interface/user_interface.gd" id="1_e2uov"]
 [ext_resource type="PackedScene" uid="uid://crdceg3me7n88" path="res://scenes/prototypes/generator/prototype_generator.tscn" id="1_yqwyh"]
+[ext_resource type="Script" uid="uid://0spm5psgtcas" path="res://scenes/user_interface/stardust_label.gd" id="2_2dtu1"]
 [ext_resource type="PackedScene" uid="uid://bxjnq2hev8vyh" path="res://scenes/prototypes/clicker/prototype_clicker.tscn" id="4_f1hci"]
 
 [node name="UserInterface" type="Control"]
@@ -83,9 +84,10 @@ theme_override_constants/margin_bottom = 16
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/LeftPanel/VBoxContainer/Resources/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/LeftPanel/VBoxContainer/Resources/MarginContainer/VBoxContainer"]
+[node name="StardustLabel" type="Label" parent="HBoxContainer/LeftPanel/VBoxContainer/Resources/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Stardust: <value>"
+script = ExtResource("2_2dtu1")
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
