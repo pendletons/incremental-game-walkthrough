@@ -4,3 +4,7 @@ extends Resource
 
 ## CCU 01 Stardust Generation level
 @export var upgrade_01_stardust_generation_level : bool = false
+## CCU 02 Stardust Boost level
+@export var upgrade_02_stardust_boost_level : int = 0
+## CCU 03 Unlock Nebulas
+@export var upgrade_03_unlock_nebulas : bool = false

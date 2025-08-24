@@ -17,7 +17,6 @@ func _ready() -> void:
 
 func initialise_upgrades() -> void:
 	var upgrades : Array[Upgrade] = HandlerCCUpgrades.ref.get_all_upgrades() 
-	print(upgrades)
 	
 	if upgrades.size() == 0:
 		return
