@@ -18,8 +18,9 @@ var cost : int
 var upgrade : Upgrade
 
 func _ready() -> void:
-	#upgrade = Up01ClickerUpgrade.new()
-	upgrade = Up02GeneratorUpgrade.new()
+	if not upgrade:
+		upgrade = Up01ClickerUpgrade.new()
+		#upgrade = Up02GeneratorUpgrade.new()
 	
 	update_label_title()
 	update_label_description()
