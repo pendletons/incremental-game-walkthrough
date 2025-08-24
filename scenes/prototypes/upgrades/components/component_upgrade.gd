@@ -48,6 +48,9 @@ func update_button(_quantity : int = -1) -> void:
 		button.disabled = false
 		return
 		
+	if upgrade.is_max_level():
+		button.text = "MAX"
+		
 	button.disabled = true
 
 ## Trigger upgrade to level up post-purchase

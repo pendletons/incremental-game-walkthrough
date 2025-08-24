@@ -16,6 +16,8 @@ func _enter_tree() -> void:
 ## Emitted when an upgrade has levelled up
 signal upgrade_leveled_up(upgrade : Upgrade)
 
+signal upgrade_unlocked(upgrade : Upgrade)
+
 @onready var upgrade_01_stardust_generation : CCU01StardustGenerator = CCU01StardustGenerator.new()
 
 @onready var upgrade_02_stardust_boost : CCU02StardustBoost = CCU02StardustBoost.new()
@@ -29,3 +31,13 @@ func get_all_upgrades() -> Array[Upgrade]:
 		upgrade_02_stardust_boost,
 		upgrade_03_unlock_nebulas
 	]
+
+## Return all unlocked CCUpgrades
+func get_all_unlocked_upgrades() -> Array[Upgrade]:
+	var unlocked_upgrades : Array[Upgrade] = []
+	
+	for upgrade : Upgrade in get_all_upgrades():
+		if upgrade.is_unlocked():
+			unlocked_upgrades.append(upgrade)
+		
+	return unlocked_upgrades

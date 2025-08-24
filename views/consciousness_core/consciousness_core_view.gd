@@ -14,9 +14,10 @@ func _ready() -> void:
 	super()
 	visible = false
 	initialise_upgrades()
+	HandlerCCUpgrades.ref.upgrade_unlocked.connect(_on_upgrade_unlocked)
 
 func initialise_upgrades() -> void:
-	var upgrades : Array[Upgrade] = HandlerCCUpgrades.ref.get_all_upgrades() 
+	var upgrades : Array[Upgrade] = HandlerCCUpgrades.ref.get_all_unlocked_upgrades() 
 	
 	if upgrades.size() == 0:
 		return
@@ -26,3 +27,10 @@ func initialise_upgrades() -> void:
 		
 		upgrade_node.upgrade = upgrade
 		ccu_area.add_child(upgrade_node)
+
+## Display a newly unlocked upgrade
+func _on_upgrade_unlocked(_upgrade : Upgrade) -> void:
+	for child : Node in ccu_area.get_children():
+		child.queue_free()
+	
+	initialise_upgrades()

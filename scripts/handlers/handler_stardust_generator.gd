@@ -41,9 +41,9 @@ func watch_for_upgrades_leveling_up(upgrade : Upgrade) -> void:
 	calculate_generator_power()
 	
 ## Wait for CCU_01 to be purchased
-func watch_for_ccu01_level_up(upgrade : Upgrade) -> void:
+func watch_for_ccu01_level_up() -> void:
 	timer.start()
-	HandlerCCUpgrades.ref.upgrade_leveled_up.disconnect(watch_for_ccu01_level_up)
+	HandlerCCUpgrades.ref.upgrade_01_stardust_generation.leveled_up.disconnect(watch_for_ccu01_level_up)
 
 func calculate_generator_power() -> void:
 	var new_power : int = 1

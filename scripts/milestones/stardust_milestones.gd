@@ -18,16 +18,12 @@ func _init() -> void:
 	
 ## Initialise a new milestone after the previous one is finished
 func initialise_new_milestone(transferred_progress : int = 0) -> void:
-	print("universe cc")
-	print(universe.consciousness_core)
 	if universe.consciousness_core == 0:
 		stardust_goal = 4
 		
 	else:
 		stardust_goal = universe.consciousness_core * 8
 
-	print("sd goal")
-	print(stardust_goal)
 	stardust_progress = transferred_progress
 	universe.stardust_milestone_progress = stardust_progress
 

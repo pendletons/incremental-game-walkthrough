@@ -20,6 +20,9 @@ func description() -> String:
 	if level < max_level:
 		text += "\n[b]Cost:[/b] %s Consciousness Core" %cost
 		
+	else:
+		text += "\n[b]Max Level[/b]"		
+		
 	return text
 
 ## Calculate the current cost based on base cost / level
@@ -38,7 +41,7 @@ func can_afford() -> bool:
 
 ## Consume stardust + level up
 func level_up() -> void:
-	if level >= max_level:
+	if is_max_level():
 		return
 		
 	var error : Error = HandlerConsciousnessCore.ref.consume_consciousness_core(cost)
@@ -49,5 +52,14 @@ func level_up() -> void:
 	level += 1
 	Game.ref.data.cc_upgrades.upgrade_01_stardust_generation_level = true
 
-	leveled_up.emit(self)
+	leveled_up.emit()
 	HandlerCCUpgrades.ref.upgrade_leveled_up.emit(self)
+
+
+## Return whether or not the upgrade has been unlocked
+func is_unlocked() -> bool:
+	return true
+
+## Return whether or not the upgrade has been maxed out
+func is_max_level() -> bool:
+	return level >= max_level

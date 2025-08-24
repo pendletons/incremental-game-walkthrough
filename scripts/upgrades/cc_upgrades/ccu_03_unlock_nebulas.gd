@@ -10,6 +10,9 @@ func _init() -> void:
 	title = "Unlock Nebulas"
 	base_cost = 2
 	cost = 2
+	
+	if not is_unlocked():
+		HandlerCCUpgrades.ref.upgrade_01_stardust_generation.leveled_up.connect(_on_ccu01_level_up)
 
 ## Return the description of the upgrade based on current cost / effects
 func description() -> String:
@@ -17,6 +20,9 @@ func description() -> String:
 	
 	if level < max_level:
 		text += "\n[b]Cost:[/b] %s Consciousness Core" %cost
+		
+	else:
+		text += "\n[b]Max Level[/b]"
 		
 	return text
 
@@ -43,5 +49,21 @@ func level_up() -> void:
 	level += 1
 	Game.ref.data.cc_upgrades.upgrade_03_unlock_nebulas = true
 	
-	leveled_up.emit(self)
+	leveled_up.emit()
 	HandlerCCUpgrades.ref.upgrade_leveled_up.emit(self)
+
+## Return whether or not the upgrade has been unlocked
+func is_unlocked() -> bool:
+	if Game.ref.data.cc_upgrades.upgrade_01_stardust_generation_level:
+		return true
+		
+	return false
+
+## Return whether or not the upgrade has been maxed out
+func is_max_level() -> bool:
+	return level >= max_level
+	
+## Triggered when CCU01 upgrade is purchased
+func _on_ccu01_level_up() -> void:
+	HandlerCCUpgrades.ref.upgrade_01_stardust_generation.leveled_up.disconnect(_on_ccu01_level_up)
+	HandlerCCUpgrades.ref.upgrade_unlocked.emit(self)	

@@ -35,10 +35,20 @@ func calculate_cost() -> void:
 
 ## Returns boolean for whether the player can afford the upgrade or not
 func can_afford() -> bool:
-	printerr("Must define can_afford() in the subclass")
+	push_error("Must define can_afford() in the subclass")
 	
 	return false
 
+## Returns boolean for whether the upgrade is maxed out
+func is_max_level() -> bool:
+	push_error("Must define can_afford() in the subclass")
+	
+	return false
+	
 ## Consume stardust + level up
 func level_up() -> void:
 	printerr("Must define this in the subclass")
+
+## Return whether or not the upgrade has been unlocked
+func is_unlocked() -> bool:
+	return false
