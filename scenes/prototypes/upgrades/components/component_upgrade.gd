@@ -15,8 +15,7 @@ extends Control
 var cost : int
 
 ## Which upgrade to display
-#var upgrade : Up01ClickerUpgrade
-var upgrade : Up02GeneratorUpgrade
+var upgrade : Upgrade
 
 func _ready() -> void:
 	#upgrade = Up01ClickerUpgrade.new()

@@ -1,27 +1,12 @@
 class_name PrototypeClicker
-extends Control
+extends View
 ## A clicker prototype creating stardust
-
-@export var user_interface : UserInterface
-@export var view : UserInterface.Views
 
 ## Initialise the label at launch
 func _ready() -> void:
+	super()
 	visible = false
-	user_interface.navigation_requested.connect(_on_navigation_requested)
 
-## Create 1 stardust
-func create_stardust() -> void:
-	HandlerStardust.ref.trigger_clicker()
-	
 ## Create stardust + update the label with the new value
 func _on_button_pressed() -> void:
-	create_stardust()
-
-## Navigate to this page if it was requested
-func _on_navigation_requested(requested_view : UserInterface.Views) -> void:
-	if requested_view == view:
-		visible = true
-		return
-		
-	visible = false
+	HandlerStardust.ref.trigger_clicker()
