@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d171wpbih3171"]
+[gd_scene load_steps=6 format=3 uid="uid://d171wpbih3171"]
 
 [ext_resource type="Script" uid="uid://cyjs33inyuoic" path="res://scenes/user_interface/user_interface.gd" id="1_e2uov"]
 [ext_resource type="PackedScene" uid="uid://crdceg3me7n88" path="res://scenes/prototypes/generator/prototype_generator.tscn" id="1_yqwyh"]
 [ext_resource type="Script" uid="uid://0spm5psgtcas" path="res://scenes/user_interface/stardust_label.gd" id="2_2dtu1"]
 [ext_resource type="PackedScene" uid="uid://bxjnq2hev8vyh" path="res://scenes/prototypes/clicker/prototype_clicker.tscn" id="4_f1hci"]
+[ext_resource type="PackedScene" uid="uid://dxi57bie7c2my" path="res://scenes/prototypes/upgrades/prototype_upgrades.tscn" id="5_f1hci"]
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -60,6 +61,10 @@ text = "Prototype Generator"
 layout_mode = 2
 text = "Prototype Clicker"
 
+[node name="PrototypeUpgradesLink" type="LinkButton" parent="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Prototype Upgrades"
+
 [node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
@@ -110,5 +115,11 @@ layout_mode = 1
 user_interface = NodePath("../../..")
 view = 1
 
+[node name="PrototypeUpgrades" parent="HBoxContainer/MainPanel" node_paths=PackedStringArray("user_interface") instance=ExtResource("5_f1hci")]
+layout_mode = 1
+user_interface = NodePath("../../..")
+view = 2
+
 [connection signal="button_up" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/PrototypeGeneratorLink" to="." method="_on_prototype_generator_link_button_up"]
 [connection signal="button_up" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/PrototypeClickerLink" to="." method="_on_prototype_clicker_link_button_up"]
+[connection signal="button_up" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/PrototypeUpgradesLink" to="." method="_on_prototype_upgrades_link_button_up"]

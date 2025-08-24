@@ -29,10 +29,17 @@ func create_stardust(quantity : int) -> void:
 
 ## Consume a specific amount of stardust, or error if stardust quantity is too low
 func consume_stardust(quantity : int) -> Error:
-	if quantity < stardust():
+	if stardust() < quantity:
 		return Error.FAILED
 
 	Game.ref.data.stardust -= quantity
 	stardust_consumed.emit(quantity)
 	
 	return Error.OK
+
+## Create stardust via the clicker, based on the upgrade level
+func trigger_clicker() -> void:
+	var quantity : int = 1
+	quantity += Game.ref.data.up_01_level
+
+	create_stardust(quantity)
