@@ -31,7 +31,7 @@ func _on_button_pressed() -> void:
 
 ## Create stardust + update label text
 func _on_timer_timeout() -> void:
-	create_stardust()
+	HandlerStardust.ref.trigger_generator()
 
 ## Navigate to this page if it was requested
 func _on_navigation_requested(requested_view : UserInterface.Views) -> void:

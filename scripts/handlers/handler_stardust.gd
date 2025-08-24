@@ -43,3 +43,10 @@ func trigger_clicker() -> void:
 	quantity += Game.ref.data.up_01_level
 
 	create_stardust(quantity)
+
+## Create stardust via the generator, based on the upgrade level
+func trigger_generator() -> void:
+	var quantity : int = 1
+	quantity += Game.ref.data.up_02_level
+	
+	create_stardust(quantity)
