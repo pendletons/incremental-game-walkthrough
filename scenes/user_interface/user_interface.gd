@@ -6,7 +6,8 @@ extends Control
 enum Views {
 	PROTOTYPE_GENERATOR,
 	PROTOTYPE_CLICKER,
-	PROTOTYPE_UPGRADES
+	PROTOTYPE_UPGRADES,
+	CONSCIOUSNESS_CORE
 }
 
 ## Set a signal to request changing the visible view
@@ -23,3 +24,7 @@ func _on_prototype_generator_link_button_up() -> void:
 ## Respond to clicking the prototype upgrades link
 func _on_prototype_upgrades_link_button_up() -> void:
 	emit_signal("navigation_requested", Views.PROTOTYPE_UPGRADES)
+
+## Respond to clicking the consciousness core link
+func _on_consciousness_core_link_button_up() -> void:
+	emit_signal("navigation_requested", Views.CONSCIOUSNESS_CORE)
