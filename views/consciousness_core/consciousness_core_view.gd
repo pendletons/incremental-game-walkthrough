@@ -12,7 +12,6 @@ extends View
 ## Initialise the view
 func _ready() -> void:
 	super()
-	visible = false
 	initialise_upgrades()
 	HandlerCCUpgrades.ref.upgrade_unlocked.connect(_on_upgrade_unlocked)
 

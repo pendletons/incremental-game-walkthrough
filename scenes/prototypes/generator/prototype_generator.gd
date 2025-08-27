@@ -7,11 +7,6 @@ extends View
 ## The timer that automatically generates stardust on a schedule
 @export var timer : Timer
 
-## Initialise the label at launch
-func _ready() -> void:
-	super()
-	visible = true
-	
 ## Trigger the timer to start auto-generating stardust, also make sure the button can't be clicked again
 func begin_generating_stardust() -> void:
 	timer.start()

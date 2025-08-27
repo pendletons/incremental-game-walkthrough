@@ -1,0 +1,119 @@
+[gd_scene load_steps=4 format=3 uid="uid://beb0c1b6l0p15"]
+
+[ext_resource type="Script" uid="uid://bna5gbiq6ucnu" path="res://views/universe/universe_view.gd" id="1_8aqqi"]
+[ext_resource type="Script" uid="uid://cbtrj3mq7n6gu" path="res://views/universe/active_effects.gd" id="2_u167v"]
+[ext_resource type="PackedScene" uid="uid://dy8gl365tcdib" path="res://scenes/components/progress_bar.tscn" id="3_asybn"]
+
+[node name="UniverseView" type="Control" node_paths=PackedStringArray("intro_text", "main_content")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8aqqi")
+intro_text = NodePath("IntroText")
+main_content = NodePath("MainContent")
+
+[node name="MainContent" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContent"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Header" type="Label" parent="MainContent/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Universe"
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContent/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="HSeparator" type="HSeparator" parent="MainContent/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MainContent/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 64
+
+[node name="ActiveEffects" type="VBoxContainer" parent="MainContent/VBoxContainer/MarginContainer2" node_paths=PackedStringArray("stardust_per_second")]
+layout_mode = 2
+theme_override_constants/separation = 16
+script = ExtResource("2_u167v")
+stardust_per_second = NodePath("StardustPerSecond")
+
+[node name="ActiveEffects" type="Label" parent="MainContent/VBoxContainer/MarginContainer2/ActiveEffects"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Active Effects"
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContent/VBoxContainer/MarginContainer2/ActiveEffects"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="HSeparator" type="HSeparator" parent="MainContent/VBoxContainer/MarginContainer2/ActiveEffects/MarginContainer"]
+layout_mode = 2
+
+[node name="StardustPerSecond" type="RichTextLabel" parent="MainContent/VBoxContainer/MarginContainer2/ActiveEffects"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+bbcode_enabled = true
+text = "Stardust per second: <value>"
+
+[node name="Space" type="Control" parent="MainContent/VBoxContainer/MarginContainer2/ActiveEffects"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="StardustMilestones" type="Label" parent="MainContent/VBoxContainer/MarginContainer2/ActiveEffects"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Progress Towards Next Consciousness Core"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MainContent/VBoxContainer/MarginContainer2/ActiveEffects"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="HSeparator" type="HSeparator" parent="MainContent/VBoxContainer/MarginContainer2/ActiveEffects/MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="MainContent/VBoxContainer/MarginContainer2/ActiveEffects"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="ProgressBar" parent="MainContent/VBoxContainer/MarginContainer2/ActiveEffects/MarginContainer3" instance=ExtResource("3_asybn")]
+layout_mode = 2
+
+[node name="IntroText" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"HeaderLarge"
+text = "Your Universe Isn't Active
+Use your first Consciousness Core to Awaken it."
+horizontal_alignment = 1

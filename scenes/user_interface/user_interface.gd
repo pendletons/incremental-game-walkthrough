@@ -7,11 +7,15 @@ enum Views {
 	PROTOTYPE_GENERATOR,
 	PROTOTYPE_CLICKER,
 	PROTOTYPE_UPGRADES,
-	CONSCIOUSNESS_CORE
+	CONSCIOUSNESS_CORE,
+	UNIVERSE
 }
 
 ## Set a signal to request changing the visible view
 signal navigation_requested(view: Views)
+
+func _ready() -> void:
+	navigation_requested.emit(Views.UNIVERSE)
 
 ## Respond to clicking the prototype clicker link
 func _on_prototype_clicker_link_button_up() -> void:
@@ -28,3 +32,7 @@ func _on_prototype_upgrades_link_button_up() -> void:
 ## Respond to clicking the consciousness core link
 func _on_consciousness_core_link_button_up() -> void:
 	emit_signal("navigation_requested", Views.CONSCIOUSNESS_CORE)
+
+## Respond to clicking the universe link
+func _on_universe_link_button_up() -> void:
+	emit_signal("navigation_requested", Views.UNIVERSE)
