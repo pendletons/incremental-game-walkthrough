@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bp67b535sh7l8"]
 
-[ext_resource type="Script" uid="uid://dy2gnk21akfs1" path="res://views/consciousness_core/consciousness_core_view.gd" id="1_q37qv"]
-[ext_resource type="PackedScene" uid="uid://dy8gl365tcdib" path="res://scenes/components/progress_bar.tscn" id="2_cnj8o"]
+[ext_resource type="Script" uid="uid://dy2gnk21akfs1" path="res://scenes/views/consciousness_core/consciousness_core_view.gd" id="1_q37qv"]
+[ext_resource type="PackedScene" uid="uid://dy8gl365tcdib" path="res://scenes/components/stardust_milestone_progress_bar/progress_bar.tscn" id="2_cnj8o"]
 
 [node name="ConsciousnessCoreView" type="Control" node_paths=PackedStringArray("ccu_area")]
 layout_mode = 3

@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://dy8gl365tcdib"]
 
-[ext_resource type="Script" uid="uid://dulxb3eta2yei" path="res://views/universe/progress_bar.gd" id="1_irv5b"]
+[ext_resource type="Script" uid="uid://dulxb3eta2yei" path="res://scenes/views/universe/progress_bar.gd" id="1_oknsy"]
 
 [node name="ProgressBar" type="ProgressBar" node_paths=PackedStringArray("label")]
 custom_minimum_size = Vector2(0, 32)
 show_percentage = false
-script = ExtResource("1_irv5b")
+script = ExtResource("1_oknsy")
 label = NodePath("Label")
 
 [node name="Label" type="Label" parent="."]

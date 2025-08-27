@@ -21,10 +21,6 @@ var upgrade: Upgrade
 
 
 func _ready() -> void:
-	if not upgrade:
-		upgrade = Up01ClickerUpgrade.new()
-		#upgrade = Up02GeneratorUpgrade.new()
-
 	update_component()
 
 	if not upgrade.is_max_level():
@@ -79,4 +75,5 @@ func _on_upgrade_level_up() -> void:
 		HandlerStardust.ref.stardust_created.disconnect(update_button)
 		HandlerStardust.ref.stardust_consumed.disconnect(update_button)
 
-		upgrade.leveled_up.disconnect(update_component)
+		if upgrade.leveled_up.is_connected(update_component):
+			upgrade.leveled_up.disconnect(update_component)

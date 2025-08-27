@@ -45,7 +45,7 @@ func _on_timer_timeout() -> void:
 
 
 ## Watch for any non-CCU_01 upgrades
-func watch_for_upgrades_leveling_up(upgrade: Upgrade) -> void:
+func watch_for_upgrades_leveling_up(_upgrade: Upgrade) -> void:
 	calculate_generator_power()
 
 

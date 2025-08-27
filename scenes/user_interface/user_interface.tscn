@@ -1,13 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://d171wpbih3171"]
+[gd_scene load_steps=6 format=3 uid="uid://d171wpbih3171"]
 
 [ext_resource type="Script" uid="uid://cyjs33inyuoic" path="res://scenes/user_interface/user_interface.gd" id="1_e2uov"]
-[ext_resource type="PackedScene" uid="uid://crdceg3me7n88" path="res://scenes/prototypes/generator/prototype_generator.tscn" id="1_yqwyh"]
 [ext_resource type="Script" uid="uid://0spm5psgtcas" path="res://scenes/user_interface/stardust_label.gd" id="2_2dtu1"]
 [ext_resource type="Script" uid="uid://ckw54jn7lpgj8" path="res://scenes/user_interface/consciousness_core_label.gd" id="3_6xuti"]
-[ext_resource type="PackedScene" uid="uid://bxjnq2hev8vyh" path="res://scenes/prototypes/clicker/prototype_clicker.tscn" id="4_f1hci"]
-[ext_resource type="PackedScene" uid="uid://dxi57bie7c2my" path="res://scenes/prototypes/upgrades/prototype_upgrades.tscn" id="5_f1hci"]
-[ext_resource type="PackedScene" uid="uid://bp67b535sh7l8" path="res://views/consciousness_core/consciousness_core_view.tscn" id="6_pvt6f"]
-[ext_resource type="PackedScene" uid="uid://beb0c1b6l0p15" path="res://views/universe/universe_view.tscn" id="7_flq3v"]
+[ext_resource type="PackedScene" uid="uid://bp67b535sh7l8" path="res://scenes/views/consciousness_core/consciousness_core_view.tscn" id="6_pvt6f"]
+[ext_resource type="PackedScene" uid="uid://beb0c1b6l0p15" path="res://scenes/views/universe/universe_view.tscn" id="7_flq3v"]
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -56,21 +53,6 @@ theme_override_constants/margin_bottom = 16
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer"]
 layout_mode = 2
 
-[node name="PrototypeGeneratorLink" type="LinkButton" parent="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "Prototype Generator"
-
-[node name="PrototypeClickerLink" type="LinkButton" parent="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "Prototype Clicker"
-
-[node name="PrototypeUpgradesLink" type="LinkButton" parent="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "Prototype Upgrades"
-
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
@@ -80,10 +62,12 @@ theme_override_constants/margin_bottom = 8
 [node name="UniverseLink" type="LinkButton" parent="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Universe"
+underline = 1
 
 [node name="ConsciousnessCoreLink" type="LinkButton" parent="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Consciousness Core"
+underline = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
@@ -131,35 +115,14 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PrototypeGenerator" parent="HBoxContainer/MainPanel" node_paths=PackedStringArray("user_interface") instance=ExtResource("1_yqwyh")]
-visible = false
-layout_mode = 1
-user_interface = NodePath("../../..")
-
-[node name="PrototypeClicker" parent="HBoxContainer/MainPanel" node_paths=PackedStringArray("user_interface") instance=ExtResource("4_f1hci")]
-visible = false
+[node name="UniverseView" parent="HBoxContainer/MainPanel" node_paths=PackedStringArray("user_interface") instance=ExtResource("7_flq3v")]
 layout_mode = 1
 user_interface = NodePath("../../..")
 view = 1
 
-[node name="PrototypeUpgrades" parent="HBoxContainer/MainPanel" node_paths=PackedStringArray("user_interface") instance=ExtResource("5_f1hci")]
-visible = false
-layout_mode = 1
-user_interface = NodePath("../../..")
-view = 2
-
-[node name="UniverseView" parent="HBoxContainer/MainPanel" node_paths=PackedStringArray("user_interface") instance=ExtResource("7_flq3v")]
-layout_mode = 1
-user_interface = NodePath("../../..")
-view = 4
-
 [node name="ConsciousnessCoreView" parent="HBoxContainer/MainPanel" node_paths=PackedStringArray("user_interface") instance=ExtResource("6_pvt6f")]
 layout_mode = 1
 user_interface = NodePath("../../..")
-view = 3
 
-[connection signal="button_up" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/PrototypeGeneratorLink" to="." method="_on_prototype_generator_link_button_up"]
-[connection signal="button_up" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/PrototypeClickerLink" to="." method="_on_prototype_clicker_link_button_up"]
-[connection signal="button_up" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/PrototypeUpgradesLink" to="." method="_on_prototype_upgrades_link_button_up"]
 [connection signal="button_up" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/UniverseLink" to="." method="_on_universe_link_button_up"]
 [connection signal="button_up" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/ConsciousnessCoreLink" to="." method="_on_consciousness_core_link_button_up"]

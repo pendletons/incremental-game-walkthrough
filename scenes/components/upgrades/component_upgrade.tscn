@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dxs0dtg18sgeu"]
 
-[ext_resource type="Script" uid="uid://dwmxi6p1w5vhb" path="res://scenes/prototypes/upgrades/components/component_upgrade.gd" id="1_5pcyn"]
+[ext_resource type="Script" uid="uid://dwmxi6p1w5vhb" path="res://scenes/components/upgrades/component_upgrade.gd" id="1_5pcyn"]
 
 [node name="ComponentUpgrade" type="Control" node_paths=PackedStringArray("label_title", "label_description", "button", "max_upgrade_veil")]
 custom_minimum_size = Vector2(0, 160)
