@@ -5,10 +5,13 @@ extends Resource
 ## Current amount of stardust available
 @export var stardust: int = 0
 ## Current amount of the consciousness cores available
-@export var consciousness_core: int = 1
+@export var consciousness_core: int = 10
 
 ## Contains CCUpgrades data to save & load
 @export var cc_upgrades: DataCCUpgrades = DataCCUpgrades.new()
 
 ## Contains universe data
 @export var universe: DataUniverse = DataUniverse.new()
+
+## Contains nebulas
+@export var nebulas: Array[DataNebula] = []

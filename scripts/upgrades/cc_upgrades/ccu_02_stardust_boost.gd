@@ -21,7 +21,7 @@ func title() -> String:
 	var value: String = tr("CCU02_TITLE")
 
 	if level > 0:
-		var level_suffix_key = "UPGRADE_LEVEL_SUFFIX_%s" % level
+		var level_suffix_key: String = "UPGRADE_LEVEL_SUFFIX_%s" % level
 		value += " " + tr(level_suffix_key)
 
 	return value

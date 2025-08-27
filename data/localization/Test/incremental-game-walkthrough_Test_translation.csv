@@ -1,6 +1,6 @@
 key,en,fr
-STARDUST_PER_SECOND_BBCODE,[b]Stardust per Second:[/b] %s,[b]Stardust par seconde:[/b] %s
-STARDUST_PER_SECOND,Stardust per Second: %s,Stardust par seconde: %s
+STARDUST_PER_SECOND_BBCODE,[b]Stardust per Second:[/b] %s,[b]Poussière d'étoiles par seconde:[/b] %s
+STARDUST_PER_SECOND,Stardust per Second: %s,Poussière d'étoiles par seconde: %s
 CCU01_TITLE,Awaken the Universe,Réveillez l'univers
 CCU01_DESCRIPTION,Awaken the Universe to start generating Stardust.,Réveillez l'Univers pour commencer à générer de la poussière d'étoiles.
 CCU01_EFFECT,[b]Effect:[/b] Passive Stardust generation,[b]Effet:[/b] Génération passive de poussière d'étoile
@@ -23,6 +23,7 @@ CCU03_EFFECT,[b]Effect:[/b] Unlock the ability to create Nebulas.,[b]Effet:[/b] 
 CONSCIOUSNESS_CORE_COST,[b]Cost:[/b] %s Consciousness Core,[b]Coût:[/b] %s Noyau de conscience
 CONSCIOUSNESS_CORE_AMOUNT,Consciousness Core: %s,Noyau de conscience : %s
 PROGRESS_BAR_NUMBERS,%s / %s,%s / %s
+STARDUST_AMOUNT_BBCODE,[b]Stardust:[/b] %s,[b]Poussière d'étoiles:[/b] %s
 STARDUST_AMOUNT,Stardust: %s,Poussière d'étoiles: %s
 VAR_UNIVERSE,Universe,Univers
 VAR_CONSCIOUSNESS_CORE,Consciousness Core,Noyau de conscience
@@ -32,3 +33,7 @@ INACTIVE_UNIVERSE,Your Universe Isn't Active\nUse your first Consciousness Core 
 UPGRADE_PURCHASE_BUTTON,Purchase,Achat
 UPGRADE_PURCHASE_MAXED,MAX,MAX
 CONSCIOUSNESS_CORE_UPGRADES,Consciousness Core Upgrades,Mises à niveau du noyau de conscience
+VAR_NEBULA,Nebula,Nébuleuse
+VAR_NEBULAS,Nebulas,Nébuleuses
+UNNAMED_NEBULA,Unnamed Nebula,Nébuleuse sans nom
+CREATE_NEBULA,Create a New Nebula,Créer une nouvelle nébuleuse

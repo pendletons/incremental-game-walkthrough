@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d171wpbih3171"]
+[gd_scene load_steps=8 format=3 uid="uid://d171wpbih3171"]
 
 [ext_resource type="Script" uid="uid://cyjs33inyuoic" path="res://scenes/user_interface/user_interface.gd" id="1_e2uov"]
 [ext_resource type="Script" uid="uid://0spm5psgtcas" path="res://scenes/user_interface/stardust_label.gd" id="2_2dtu1"]
+[ext_resource type="Script" uid="uid://bjfrea5w841jr" path="res://scenes/user_interface/nebulas_link_button.gd" id="2_pvt6f"]
 [ext_resource type="Script" uid="uid://ckw54jn7lpgj8" path="res://scenes/user_interface/consciousness_core_label.gd" id="3_6xuti"]
 [ext_resource type="PackedScene" uid="uid://bp67b535sh7l8" path="res://scenes/views/consciousness_core/consciousness_core_view.tscn" id="6_pvt6f"]
+[ext_resource type="PackedScene" uid="uid://cmueepllldwip" path="res://scenes/views/nebulas/nebulas_view.tscn" id="7_6xuti"]
 [ext_resource type="PackedScene" uid="uid://beb0c1b6l0p15" path="res://scenes/views/universe/universe_view.tscn" id="7_flq3v"]
 
 [node name="UserInterface" type="Control"]
@@ -69,6 +71,12 @@ layout_mode = 2
 text = "VAR_CONSCIOUSNESS_CORE"
 underline = 1
 
+[node name="NebulasLink" type="LinkButton" parent="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "VAR_NEBULA"
+underline = 1
+script = ExtResource("2_pvt6f")
+
 [node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
@@ -124,5 +132,11 @@ view = 1
 layout_mode = 1
 user_interface = NodePath("../../..")
 
+[node name="NebulasView" parent="HBoxContainer/MainPanel" node_paths=PackedStringArray("user_interface") instance=ExtResource("7_6xuti")]
+layout_mode = 1
+user_interface = NodePath("../../..")
+view = 2
+
 [connection signal="button_up" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/UniverseLink" to="." method="_on_universe_link_button_up"]
 [connection signal="button_up" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/ConsciousnessCoreLink" to="." method="_on_consciousness_core_link_button_up"]
+[connection signal="button_up" from="HBoxContainer/LeftPanel/VBoxContainer/Navigator/MarginContainer/VBoxContainer/NebulasLink" to="." method="_on_nebulas_link_button_up"]

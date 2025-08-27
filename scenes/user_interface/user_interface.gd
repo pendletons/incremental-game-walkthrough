@@ -3,7 +3,7 @@ extends Control
 ## Main user interface
 
 ## List of views that are available to display
-enum Views { CONSCIOUSNESS_CORE, UNIVERSE }
+enum Views { CONSCIOUSNESS_CORE, UNIVERSE, NEBULAS }
 
 ## Set a signal to request changing the visible view
 signal navigation_requested(view: Views)
@@ -21,3 +21,7 @@ func _on_consciousness_core_link_button_up() -> void:
 ## Respond to clicking the universe link
 func _on_universe_link_button_up() -> void:
 	emit_signal("navigation_requested", Views.UNIVERSE)
+
+
+func _on_nebulas_link_button_up() -> void:
+	emit_signal("navigation_requested", Views.NEBULAS)

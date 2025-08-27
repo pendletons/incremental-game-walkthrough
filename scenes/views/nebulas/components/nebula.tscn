@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5b04280whiyy"]
+
+[ext_resource type="Script" uid="uid://bdovjhi00c1qh" path="res://scenes/views/nebulas/components/component_nebula.gd" id="1_3qy0c"]
+
+[node name="Nebula" type="VBoxContainer" node_paths=PackedStringArray("label_name", "label_composition", "consumption_slider")]
+offset_right = 530.0
+offset_bottom = 132.0
+theme_override_constants/separation = 16
+script = ExtResource("1_3qy0c")
+label_name = NodePath("NebulaName")
+label_composition = NodePath("StardustCreated")
+consumption_slider = NodePath("MarginContainer2/StardustConsumption")
+
+[node name="NebulaName" type="Label" parent="."]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Nebula Name"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="StardustCreated" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]Stardust:[/b] <no value>"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="StardustConsumption" type="HSlider" parent="MarginContainer2"]
+layout_mode = 2
+max_value = 5.0
+
+[connection signal="value_changed" from="MarginContainer2/StardustConsumption" to="." method="_on_stardust_consumption_value_changed"]
