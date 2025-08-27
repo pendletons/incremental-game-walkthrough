@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dwmxi6p1w5vhb" path="res://scenes/prototypes/upgrades/components/component_upgrade.gd" id="1_5pcyn"]
 
-[node name="ComponentUpgrade" type="Control" node_paths=PackedStringArray("label_title", "label_description", "button")]
+[node name="ComponentUpgrade" type="Control" node_paths=PackedStringArray("label_title", "label_description", "button", "max_upgrade_veil")]
 custom_minimum_size = Vector2(0, 160)
 layout_mode = 3
 anchors_preset = 0
@@ -10,6 +10,7 @@ script = ExtResource("1_5pcyn")
 label_title = NodePath("MarginContainer/HBoxContainer/Info/VBoxContainer/UpgradeTitle")
 label_description = NodePath("MarginContainer/HBoxContainer/Info/VBoxContainer/UpgradeDescription")
 button = NodePath("MarginContainer/HBoxContainer/PurchaseButton")
+max_upgrade_veil = NodePath("MaxedUpgradeVeil")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -65,5 +66,15 @@ fit_content = true
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 text = "Purchase"
+
+[node name="MaxedUpgradeVeil" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.117647, 0.117647, 0.501961)
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/PurchaseButton" to="." method="_on_purchase_button_pressed"]
