@@ -20,7 +20,7 @@ func _update_progress() -> void:
 	max_value = milestone.stardust_goal
 	value = milestone.stardust_progress
 
-	label.text = "%s / %s" % [int(value), int(max_value)]
+	label.text = tr("PROGRESS_BAR_NUMBERS") % [int(value), int(max_value)]
 
 
 func _on_milestone_progress() -> void:

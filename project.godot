@@ -37,7 +37,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SignalVisualizer/plugin.cfg", "res://addons/beautify_code_on_save/plugin.cfg", "res://addons/godot-vim/plugin.cfg")
+enabled=PackedStringArray("res://addons/SignalVisualizer/plugin.cfg", "res://addons/beautify_code_on_save/plugin.cfg", "res://addons/godot-vim/plugin.cfg", "res://addons/localization_with_google_sheet/plugin.cfg")
 
 [file_customization]
 
@@ -45,3 +45,14 @@ folder_colors={
 "res://scenes/": "blue",
 "res://scripts/": "pink"
 }
+
+[internationalization]
+
+locale/translations=["res://data/localization/Test/incremental-game-walkthrough_Test_translation.en.translation", "res://data/localization/Test/incremental-game-walkthrough_Test_translation.fr.translation"]
+
+[localization_with_google_sheet]
+
+workspaces=[{
+"name": "Test",
+"url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRBgv4vMIRJ5gNvHuQZ7XOwew8dPYodHS0_6QSikGM6bvCI777c-NddzhJdbK7Dm_QjsYpuqdqSZDNW/pub?gid=0&single=true&output=csv"
+}]

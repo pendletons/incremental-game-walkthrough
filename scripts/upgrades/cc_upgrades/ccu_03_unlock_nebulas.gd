@@ -21,13 +21,13 @@ func title() -> String:
 
 ## Return the description of the upgrade based on current cost / effects
 func description() -> String:
-	var text: String = "[b]Effect:[/b] Unlock the ability to create Nebulas."
+	var text: String = tr("CCU03_EFFECT")
 
 	if level < max_level:
-		text += "\n[b]Cost:[/b] %s Consciousness Core" % cost
+		text += "\n" + tr("CONSCIOUSNESS_CORE_COST") % cost
 
 	else:
-		text += "\n[b]Max Level[/b]"
+		text += "\n" + tr("UPGRADE_MAX_LEVEL")
 
 	return text
 

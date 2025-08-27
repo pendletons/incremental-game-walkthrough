@@ -54,7 +54,7 @@ func update_button(_quantity: int = -1) -> void:
 		return
 
 	if upgrade.is_max_level():
-		button.text = "MAX"
+		button.text = tr("UPGRADE_PURCHASE_MAXED")
 
 	button.disabled = true
 

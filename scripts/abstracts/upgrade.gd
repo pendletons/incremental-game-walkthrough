@@ -25,12 +25,14 @@ func _init() -> void:
 
 
 func title() -> String:
+	push_error("Must define title() in the subclass")
 	return "Title not defined"
 
 
 ## Abstract method, must be overwritten.[br]
 ## Return the description of the upgrade based on current cost / effects
 func description() -> String:
+	push_error("Must define title() in the subclass")
 	return "Description not defined"
 
 
@@ -55,7 +57,7 @@ func is_max_level() -> bool:
 
 ## Consume stardust + level up
 func level_up() -> void:
-	printerr("Must define this in the subclass")
+	printerr("Must define level_up() in the subclass")
 
 
 ## Return whether or not the upgrade has been unlocked

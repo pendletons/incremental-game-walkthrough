@@ -34,7 +34,7 @@ theme_override_constants/separation = 16
 [node name="Header" type="Label" parent="MainContent/VBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
-text = "Universe"
+text = "VAR_UNIVERSE"
 
 [node name="MarginContainer" type="MarginContainer" parent="MainContent/VBoxContainer"]
 layout_mode = 2
@@ -58,7 +58,7 @@ stardust_per_second = NodePath("StardustPerSecond")
 [node name="ActiveEffects" type="Label" parent="MainContent/VBoxContainer/MarginContainer2/ActiveEffects"]
 layout_mode = 2
 theme_type_variation = &"HeaderMedium"
-text = "Active Effects"
+text = "ACTIVE_EFFECTS"
 
 [node name="MarginContainer" type="MarginContainer" parent="MainContent/VBoxContainer/MarginContainer2/ActiveEffects"]
 layout_mode = 2
@@ -72,7 +72,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 bbcode_enabled = true
-text = "Stardust per second: <value>"
+text = "STARDUST_PER_SECOND"
 
 [node name="Space" type="Control" parent="MainContent/VBoxContainer/MarginContainer2/ActiveEffects"]
 custom_minimum_size = Vector2(0, 80)
@@ -81,7 +81,7 @@ layout_mode = 2
 [node name="StardustMilestones" type="Label" parent="MainContent/VBoxContainer/MarginContainer2/ActiveEffects"]
 layout_mode = 2
 theme_type_variation = &"HeaderMedium"
-text = "Progress Towards Next Consciousness Core"
+text = "PROGRESS_TOWARD_STARDUST_MILESTONE"
 
 [node name="MarginContainer2" type="MarginContainer" parent="MainContent/VBoxContainer/MarginContainer2/ActiveEffects"]
 layout_mode = 2
@@ -114,6 +114,5 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"HeaderLarge"
-text = "Your Universe Isn't Active
-Use your first Consciousness Core to Awaken it."
+text = "INACTIVE_UNIVERSE"
 horizontal_alignment = 1

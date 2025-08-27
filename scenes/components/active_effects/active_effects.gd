@@ -19,7 +19,7 @@ func _connect_signals() -> void:
 
 func _update_stardust_per_second() -> void:
 	var text: String = (
-		"[b]Stardust per Second:[/b] %s" % HandlerStardustGenerator.ref.generator_power
+		tr("STARDUST_PER_SECOND_BBCODE") % HandlerStardustGenerator.ref.generator_power
 	)
 	stardust_per_second.text = text
 

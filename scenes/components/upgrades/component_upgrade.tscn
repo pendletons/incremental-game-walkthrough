@@ -51,21 +51,17 @@ grow_vertical = 2
 [node name="UpgradeTitle" type="Label" parent="MarginContainer/HBoxContainer/Info/VBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"HeaderMedium"
-text = "Upgrade Title"
 
 [node name="UpgradeDescription" type="RichTextLabel" parent="MarginContainer/HBoxContainer/Info/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
-text = "Upgrade description
-Effect :
-Cost :"
 fit_content = true
 
 [node name="PurchaseButton" type="Button" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
-text = "Purchase"
+text = "UPGRADE_PURCHASE_BUTTON"
 
 [node name="MaxedUpgradeVeil" type="ColorRect" parent="."]
 visible = false

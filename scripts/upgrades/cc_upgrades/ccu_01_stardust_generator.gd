@@ -14,19 +14,19 @@ func _init() -> void:
 
 
 func title() -> String:
-	return "Awaken the Universe"
+	return tr("CCU01_TITLE")
 
 
 ## Abstract method, must be overwritten.[br]
 ## Return the description of the upgrade based on current cost / effects
 func description() -> String:
-	var text: String = "Awaken the Universe to start generating Stardust."
-	text += "\n[b]Effect:[/b] Passive Stardust generation"
+	var text: String = tr("CCU01_DESCRIPTION")
+	text += "\n" + tr("CCU01_EFFECT")
 	if level < max_level:
-		text += "\n[b]Cost:[/b] %s Consciousness Core" % cost
+		text += "\n" + tr("CONSCIOUSNESS_CORE_COST") % cost
 
 	else:
-		text += "\n[b]Max Level[/b]"
+		text += "\n" + tr("UPGRADE_MAX_LEVEL")
 
 	return text
 

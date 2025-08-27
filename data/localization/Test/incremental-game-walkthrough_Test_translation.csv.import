@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cpymtgajmt1ej"
+
+[deps]
+
+files=["res://data/localization/Test/incremental-game-walkthrough_Test_translation.en.translation", "res://data/localization/Test/incremental-game-walkthrough_Test_translation.fr.translation"]
+
+source_file="res://data/localization/Test/incremental-game-walkthrough_Test_translation.csv"
+dest_files=["res://data/localization/Test/incremental-game-walkthrough_Test_translation.en.translation", "res://data/localization/Test/incremental-game-walkthrough_Test_translation.fr.translation"]
+
+[params]
+
+compress=true
+delimiter=0
