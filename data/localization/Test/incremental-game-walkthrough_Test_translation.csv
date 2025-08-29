@@ -37,3 +37,4 @@ VAR_NEBULA,Nebula,Nébuleuse
 VAR_NEBULAS,Nebulas,Nébuleuses
 UNNAMED_NEBULA,Unnamed Nebula,Nébuleuse sans nom
 CREATE_NEBULA,Create a New Nebula,Créer une nouvelle nébuleuse
+CONSCIOUSNESS_CORE_HEADER_TOOLTIP,Consciousness Cores can be obtained by generating Stardust.\n\nEach new Consciousness Core requires more Stardust to be generated.\n\nConsciousness Cores can be used to buy Upgrades which affect the whole Universe.,Les noyaux de conscience peuvent être obtenus en générant de la poussière d'étoiles. Chaque nouveau noyau de conscience nécessite la génération d'une plus grande quantité de poussière d'étoiles. Les noyaux de conscience peuvent être utilisés pour acheter des améliorations qui affectent l'ensemble de l'univers.
